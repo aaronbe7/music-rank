@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header') %>
+<form id="new-form" action="/albums" method="POST">
+    <label>Album Title:</label>
+    <input type="text" name="albumTitle"><br>
+    <label>Artist:</label>
+    <input type="text" name="artist"><br>
+    <label>Release Year:</label>
+    <input type="text" name="releaseYear"><br>
+    <label>Genre:</label>
+    <input type="text" name="genre"><br>
+    <input type="submit" value="Add Movie">
+  </form>
+<%- include('../partials/footer') %>
+</html>

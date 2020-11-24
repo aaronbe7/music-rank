@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header') %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<table>
+<tbody>
+    <% albums.forEach(function(a) { %>
+        <tr>
+            <td>Album:</td>
+            <td><%= a.albumTitle %></td>
+        </tr>
+        <tr>
+            <td>Artist:</td>
+            <td><%= a.artist %></td>
+        </tr>
+        <tr>
+            <td>Release Year:</td>
+            <td><%= a.releaseYear %></td>
+        </tr>
+        <tr>
+            <td>Genre:</td>
+            <td><%= a.genre %></td>
+        </tr>
+    <% }) %>
+</tbody>
+</table>
+<%- include('../partials/footer') %>
+</html>
