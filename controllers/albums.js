@@ -2,6 +2,7 @@ const Album = require('../models/Album');
 
 module.exports = {
     index,
+    show,
     new: newAlbum,
     create,
 }
@@ -12,6 +13,13 @@ function index(req, res) {
         res.render('albums/index', { title: 'Albums', albums});
     })
 }
+
+function show(req, res) {
+    Album.findById(req.params.id, function(err, album) {
+            res.render('albums/show', { title: 'Album Detail', album });
+    });
+  }
+
 
 function newAlbum(req, res) {
     res.render('albums/new', { title: 'New Album' });
