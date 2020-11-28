@@ -6,9 +6,9 @@ module.exports = {
 
 function create(req, res) {
   Album.findById(req.params.id, function(err, album) {
-    album.reviews.push(req.body);
+    album.ratings.push(req.body);
     album.save(function(err) {
-      res.redirect(`/album/${album._id}`);
+      res.redirect(`/albums/${album._id}`);
     });
   });
 }

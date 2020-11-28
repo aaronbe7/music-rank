@@ -1,4 +1,4 @@
-const Album = require('../models/Album');
+const Album = require('../models/album');
 
 module.exports = {
     index,
@@ -22,7 +22,7 @@ function show(req, res) {
 
 
 function newAlbum(req, res) {
-    res.render('albums/new', { title: 'New Album' });
+    res.render('albums/newAlbum', { title: 'New Album' });
   }
 
 function create(req, res) {

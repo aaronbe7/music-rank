@@ -2,15 +2,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ratingSchema = new Schema({
-    rating: Number, 
-  });
+    ratingScore: {
+      type: Number, 
+  },
+  arrival: Date,
+});
 
 const albumSchema = new mongoose.Schema({
-    albumTitle: String,
-    artist: String,
-    releaseYear: String,
-    genre: String,
-    rating: [ratingSchema],
+    albumTitle: {
+      type: String,
+    },
+    artist: {
+      type: String,
+    },
+    releaseYear: {
+      type: String,
+    },
+    genre: {
+      type: String,
+    },
+    ratings: [ratingSchema],
 })
 
 // Create your User Model

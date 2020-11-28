@@ -21,7 +21,7 @@
 <h5>Rate This Album</h5>
 <form method="POST" action="/albums/<%= album._id %>/ratings">
   <label>Rating:</label>
-  <select name="rating">
+  <select name="ratingScore">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -35,5 +35,29 @@
   </select>
   <input type="submit" value="Add Rating">
 </form>
+
+<% if (album.ratings.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% album.ratings.forEach(function(r) { %>
+          <tr>
+            <td><%= r.user %></td>
+            <td><%= r.ratingScore %></td>
+          </tr>
+        <% }); %>
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Ratings</h5>
+  <% } %> 
+
 <%- include('../partials/footer') %>
 </html>
