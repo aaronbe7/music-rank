@@ -36,6 +36,7 @@
   <input class="button" type="submit" value="Add Rating">
 </form>
 
+
 <% if (album.ratings.length) { %>
     <table id='rating'>
       <thead>
@@ -51,9 +52,11 @@
           <tr>
             <td>User</td>
             <td><%= r.ratingScore %></td>
+            <% if (album._id.equals(user && user._id)) { %>
             <td><form action="/ratings/<%= r.id %>?_method=DELETE" method="POST" id="delete">
               <button id='x' type="submit">X</button>
             </form></td>
+            <% } %> 
           </tr>
         <% }); %>
         <tr>
