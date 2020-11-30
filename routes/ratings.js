@@ -3,7 +3,7 @@ const router = express.Router();
 const ratingsCtrl = require('../controllers/ratings');
 
 router.post('/albums/:id/ratings', isLoggedIn, ratingsCtrl.create);
-router.post('albums/:id', ratingsCtrl.delete)
+router.delete('/ratings/:id', ratingsCtrl.delete)
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){

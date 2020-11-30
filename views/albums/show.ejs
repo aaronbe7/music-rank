@@ -51,8 +51,7 @@
           <tr>
             <td>User</td>
             <td><%= r.ratingScore %></td>
-            <td><form id="delete" action="/albums/<%= r.id %>?_method=DELETE"
-              class= method="POST">
+            <td><form action="/ratings/<%= r.id %>?_method=DELETE" method="POST" id="delete">
               <button id='x' type="submit">X</button>
             </form></td>
           </tr>
