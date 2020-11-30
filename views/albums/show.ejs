@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h5>Album Info</h5>
-    <section>
-        <div>Album: <%= album.albumTitle %></div>
-        <div>Artist: <%= album.artist %></div>
-        <div>Release Year: <%= album.releaseYear %></div>
-        <div>Genre: <%= album.genre %></div>
+    <h5>Album Information</h5>
+    <section id='albuminfo'>
+        <div class='title'>Album:</div><div class='data'><%= album.albumTitle %></div>
+        <div class='title'>Artist:</div><div class='data'> <%= album.artist %></div>
+        <div class='title'>Release Year:</div><div class='data'> <%= album.releaseYear %></div>
+        <div class='title'>Genre:</div><div class='data'> <%= album.genre %></div>
       </section> 
 </body>
 
@@ -20,8 +20,8 @@
 
 <h5>Rate This Album</h5>
 <form method="POST" action="/albums/<%= album._id %>/ratings">
-  <label>Rating:</label>
-  <select name="ratingScore">
+  <label id="rate">Rating:</label>
+  <select class="button" name="ratingScore">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -33,11 +33,11 @@
     <option value="9">9</option>
     <option value="10">10</option>
   </select>
-  <input type="submit" value="Add Rating">
+  <input class="button" type="submit" value="Add Rating">
 </form>
 
 <% if (album.ratings.length) { %>
-    <table>
+    <table id='rating'>
       <thead>
         <tr>
           <th>User</th>
@@ -45,13 +45,21 @@
         </tr>
       </thead>
       <tbody>
+        <% let total = 0 %>
         <% album.ratings.forEach(function(r) { %>
+          <% total += r.ratingScore %>
           <tr>
-            <td><%= r.user %></td>
+            <td>User</td>
             <td><%= r.ratingScore %></td>
+            <td><form id="delete" action="/albums/<%= r.id %>?_method=DELETE"
+              class= method="POST">
+              <button id='x' type="submit">X</button>
+            </form></td>
           </tr>
         <% }); %>
         <tr>
+        <td colspan="1"></td>
+        <td><strong><%= (total / album.ratings.length).toFixed(1) %></strong></td>
         </tr>
       </tbody>
     </table>

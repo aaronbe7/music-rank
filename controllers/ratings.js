@@ -1,8 +1,14 @@
+const { deleteOne } = require('../models/album');
 const Album = require('../models/album');
 
 module.exports = {
   create,
+  delete: deleteRating,
 };
+
+function deleteRating(req, res) {
+ 
+  }
 
 function create(req, res) {
   Album.findById(req.params.id, function(err, album) {
