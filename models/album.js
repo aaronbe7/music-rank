@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ratingSchema = new Schema({
-    ratingScore: {
-      type: Number, 
-  },
-  arrival: Date,
+    ratingScore: Number, 
+    guest: {
+      type: Schema.Types.ObjectId,
+      ref: 'Guest',
+    }
 });
 
 const albumSchema = new mongoose.Schema({
@@ -20,6 +21,10 @@ const albumSchema = new mongoose.Schema({
     },
     genre: {
       type: String,
+    },
+    guest: {
+      type: Schema.Types.ObjectId,
+      ref: 'Guest',
     },
     ratings: [ratingSchema],
 })

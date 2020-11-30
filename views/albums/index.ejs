@@ -8,33 +8,42 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
-<table>
-<tbody>
-    <% albums.forEach(function(a) { %>
-        <tr>
-            <td class='title'>Album:</td>
-            <td><%= a.albumTitle %></td>
-        </tr>
-        <tr>
-            <td class='title'>Artist:</td>
-            <td><%= a.artist %></td>
-        </tr>
-        <tr>
-            <td class='title'>Release Year:</td>
-            <td><%= a.releaseYear %></td>
-        </tr>
-        <tr>
-            <td class='title'>Genre:</td>
-            <td><%= a.genre %></td>
-        </tr>
-        <tr>
-            <td class='title'>Rating:</td>
-        </tr>
-        <td>
-            <td><a id='details' href="/albums/<%= a._id %>">DETAILS</a></td>
-        </tr>
-    <% }) %>
-</tbody>
-</table>
+<% albums.forEach(function(a) { %>
+    <table>
+        <tbody>
+            <tr>
+                <td class='title'>Album:</td>
+                <td><%= a.albumTitle %></td>
+            </tr>
+            <tr>
+                <td class='title'>Artist:</td>
+                <td><%= a.artist %></td>
+            </tr>
+            <tr>
+                <td class='title'>Release Year:</td>
+                <td><%= a.releaseYear %></td>
+            </tr>
+            <tr>
+                <td class='title'>Genre:</td>
+                <td><%= a.genre %></td>
+            </tr>
+            <tr>
+                <td class='title'>Rating:</td>
+                <% if (a.ratings.length) { %>
+                <% let total = 0 %>
+                <% a.ratings.forEach(function(r) { %>
+                    <% total += r.ratingScore %>
+                <% }) %>
+                <td class="avg"><%= (total / a.ratings.length).toFixed(1) %></td>
+                <% } else { %>
+                    <td class="avg">-</td>
+                <% } %>
+            </tr>
+            <td>
+                <td><a id='details' href="/albums/<%= a._id %>">DETAILS</a></td>
+            </tr>
+        </tbody>
+    </table>
+<% }) %>
 <%- include('../partials/footer') %>
 </html>

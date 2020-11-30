@@ -50,13 +50,13 @@
         <% album.ratings.forEach(function(r) { %>
           <% total += r.ratingScore %>
           <tr>
-            <td>User</td>
+            <td><%= r.guest.name %></td>
             <td><%= r.ratingScore %></td>
-            <% if (album._id.equals(user && user._id)) { %>
+            <% if (album.guest._id.equals(guest && guest._id)) { %>
             <td><form action="/ratings/<%= r.id %>?_method=DELETE" method="POST" id="delete">
               <button id='x' type="submit">X</button>
             </form></td>
-            <% } %> 
+            <% } %>
           </tr>
         <% }); %>
         <tr>

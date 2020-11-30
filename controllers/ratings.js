@@ -18,6 +18,7 @@ function deleteRating(req, res) {
 
 function create(req, res) {
   Album.findById(req.params.id, function(err, album) {
+    req.body.guest = req.user._id;
     album.ratings.push(req.body);
     album.save(function(err) {
       res.redirect(`/albums/${album._id}`);

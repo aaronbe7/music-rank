@@ -31,7 +31,7 @@ table{
   display: inline-grid;
   border-style: solid;
   border-color: #f1ec4c;
-  border-radius: 15px;
+  border-radius: 10px;
   color: #212121;
   font-size: 35px;
   background: linear-gradient(to bottom right, #61797d, #34494f);
@@ -49,6 +49,7 @@ table{
 #details {
   text-decoration: none;
   color: #f74e3b;
+  font-size: 30px;
 }
 
 nav > a {
@@ -99,7 +100,7 @@ nav {
   color: #f1ec4c;
   padding: 60px;
   border-width: 5px;
-  border-radius: 30px;
+  border-radius: 10px;
   background: linear-gradient(to bottom right, #61797d, #34494f);
 }
 
@@ -109,7 +110,7 @@ nav {
   border-color: #f1ec4c;
   display: inline-grid;
   padding: 20px;
-  border-radius: 30px;
+  border-radius: 10px;
   grid-template-columns: auto auto;
   text-align: left;
   grid-gap: 3px;
@@ -145,7 +146,7 @@ strong {
   background: #1a2022;
   color: #f74e3b;
   border-width: 0px;
-  border-radius: 20px;
+  border-radius: 15px;
   font-size: 19px;
   padding: 6px;
 }
@@ -160,4 +161,8 @@ strong {
   border-width: 0px;
   border-radius: 10px;
   font-size: 15px;
+}
+
+.avg {
+  color: #D33FE4;
 }
