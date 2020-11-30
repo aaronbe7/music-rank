@@ -10,15 +10,15 @@ module.exports = {
 
 function index(req, res) {
     Album.find({}, function(err, albums) {
-        console.log(albums);
         res.render('albums/index', { title: 'Albums', albums});
     })
 }
 
 function show(req, res) {
+    const user = req.session.passport && req.session.passport.user;
     Album.findById(req.params.id)
     .populate("ratings.guest").exec(function(err, album) {
-            res.render('albums/show', { title: 'Album Detail', album, guest: req.user});
+        res.render('albums/show', { title: 'Album Detail', album, guest: user});
     }); 
 }
 

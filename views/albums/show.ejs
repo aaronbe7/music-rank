@@ -40,7 +40,7 @@
 <% if (album.ratings.length) { %>
     <table id='rating'>
       <thead>
-        <tr>
+        <tr id='user-rating'>
           <th>User</th>
           <th>Rating</th>
         </tr>
@@ -49,19 +49,19 @@
         <% let total = 0 %>
         <% album.ratings.forEach(function(r) { %>
           <% total += r.ratingScore %>
-          <tr>
+          <tr id='user-rating'>
             <td><%= r.guest.name %></td>
             <td><%= r.ratingScore %></td>
-            <% if (album.guest._id.equals(guest && guest._id)) { %>
+            <% if (r.guest._id.equals(guest)) { %>
             <td><form action="/ratings/<%= r.id %>?_method=DELETE" method="POST" id="delete">
               <button id='x' type="submit">X</button>
             </form></td>
             <% } %>
           </tr>
         <% }); %>
-        <tr>
+        <tr id='user-rating'>
         <td colspan="1"></td>
-        <td><strong>Avg: <%= (total / album.ratings.length).toFixed(1) %></strong></td>
+        <td id='average'><%= (total / album.ratings.length).toFixed(1) %></td>
         </tr>
       </tbody>
     </table>
