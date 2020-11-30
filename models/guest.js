@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const guestSchema = new mongoose.Schema({
     name: String,
     email: String,
     googleId: String,
@@ -8,4 +8,4 @@ const userSchema = new mongoose.Schema({
 
 // Create your User Model
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Guest', guestSchema);

@@ -1,6 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const User = require('../models/user');
+const Guest = require('../models/guest');
 
 // configuring Passport!
 passport.use(new GoogleStrategy({
@@ -9,33 +9,33 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOne({ 'googleId': profile.id }, function(err, user) {
+    Guest.findOne({ 'googleId': profile.id }, function(err, guest) {
       if (err) return cb(err);
-      if (user) {
-        return cb(null, user);
+      if (guest) {
+        return cb(null, guest);
       } else {
         // we have a new student via OAuth!
-        var newUser = new User({
+        var newGuest = new Guest({
           name: profile.displayName,
           email: profile.emails[0].value,
           googleId: profile.id
         });
-        newUser.save(function(err) {
+        newGuest.save(function(err) {
           if (err) return cb(err);
-          return cb(null, newUser);
+          return cb(null, newGuest);
         });
       }
     });
   }
 ));
 
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
+passport.serializeUser(function(guest, done) {
+  done(null, guest.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
+  Guest.findById(id, function(err, guest) {
+    done(err, guest);
   });
 });
 

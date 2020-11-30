@@ -9,8 +9,12 @@
 </head>
 <body>
   <nav>
-    <a href="/albums/new">New</a>
+    <a href="/albums/new">New Album</a>
     <a href="/albums">ALBUMS</a>
-    <a href="/">Logout</a>
+      <% if (user) { %>
+        <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+      <% } else { %>
+        <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+      <% } %>
   </nav>
   <main>
