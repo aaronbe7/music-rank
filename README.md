@@ -28,5 +28,4 @@ Enhancements that can be made:
 * Ability to filter and order albums 
 * API for music instead of user input
 * Album artwork
-
-This application has the potential to go in many different directions. For example, it can be used as a music sharing and ranking social platform. Users can create and navigate profile pages consisting of  ranked albums and artists. 
+* Profile pages

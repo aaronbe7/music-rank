@@ -4,7 +4,7 @@ const albumsCtrl = require('../controllers/albums');
 
 router.get('/', albumsCtrl.index);
 router.get('/new', isLoggedIn, albumsCtrl.new);
-router.get('/:id', albumsCtrl.show)
+router.get('/:id', albumsCtrl.show);
 router.post('/', albumsCtrl.create);
 
 function isLoggedIn(req, res, next){

@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const ratingSchema = new Schema({
     ratingScore: Number, 
+    ratingComment: String,
     guest: {
       type: Schema.Types.ObjectId,
       ref: 'Guest',

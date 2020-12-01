@@ -16,6 +16,7 @@
       </section> 
 </body>
 
+
 <br><br>
 
 <h5>Rate This Album</h5>
@@ -33,6 +34,7 @@
     <option value="9">9</option>
     <option value="10">10</option>
   </select>
+  <input type="text" name="ratingComment">
   <input class="button" type="submit" value="Add Rating">
 </form>
 
@@ -43,6 +45,8 @@
         <tr id='user-rating'>
           <th>User</th>
           <th>Rating</th>
+          <th>Comment</th>
+          <th>Update Comment</th>
         </tr>
       </thead>
       <tbody>
@@ -52,6 +56,13 @@
           <tr id='user-rating'>
             <td><%= r.guest.name %></td>
             <td><%= r.ratingScore %></td>
+            <td><%= r.ratingComment%></td>
+            <% if (r.guest._id.equals(guest)) { %>
+            <td><form action="/ratings/<%= r._id %>?_method=PUT" method="POST">
+              <input type="text" name="ratingComment" value="<%= r.text %>">
+              <button id='x' type="submit">U</button>
+            </form></td>
+            <% } %>
             <% if (r.guest._id.equals(guest)) { %>
             <td><form action="/ratings/<%= r.id %>?_method=DELETE" method="POST" id="delete">
               <button id='x' type="submit">X</button>
