@@ -1,39 +1,20 @@
-.brand-logo {
-  margin-left: 15px;
-}
-
-.card .card-content .card-title {
-  margin-bottom: 10px;
-}
-
-#search-row form {
-  padding-top: 20px;
-}
-
-.student-name {
-  position: relative;
-  top: -5px;
-}
-
-.collection-item form {
-  margin-top: -5px;
-}
-
 body {
   text-align: center;
-  background: linear-gradient(to bottom right, #586b71, #242926) fixed;
+  background: linear-gradient(to bottom right, #93b1b6, #97a79d) fixed;
 }
 
 table{
+  text-align: left;
   margin:50px 50px 0px 50px;
   font-family: sans-serif;
   display: inline-grid;
   border-style: solid;
+  border-width: 2px;
   border-color: #f1ec4c;
   border-radius: 10px;
-  color: #212121;
+  color: #3c4142;
+  background: linear-gradient(to bottom right, #8fb8c5, #91ad9e) fixed;
   font-size: 25px;
-  background: linear-gradient(to bottom right, #61797d, #34494f);
   padding: 30px;
 }
 
@@ -44,23 +25,24 @@ table{
 }
 
 .title {
-  color: #f1ec4c;
+  color: #e6e272;
+  padding-right: 10px;
 }
 
 .data {
-  color: #212121;
+  color: #3c4142;
 }
 
 #details {
   text-decoration: none;
-  color: #f74e3b;
+  color: #5c777d;
   font-size: 20px;
 }
 
 nav > a {
   padding: 0px 100px 0px 100px;
   text-decoration: none;
-  color: #f74e3b;
+  color: #3c4142;
   font-family: sans-serif;
   font-size: 25px;
 }
@@ -68,8 +50,10 @@ nav > a {
 nav {
   padding: 10px 0px 10px 0px;
   margin: -10px -10px 0 -10px;
-  background: linear-gradient(to bottom right, #2a3134, #1a2022);
-
+  background: #aad1d0;
+  border-style: solid;
+  border-color: #f1ec4c;
+  border-width: 2px;
   display: block;
   overflow: hidden;
 }
@@ -85,14 +69,14 @@ nav {
   border-color: #f1ec4c;
   color: #f1ec4c;
   padding: 60px;
-  border-width: 5px;
   border-radius: 10px;
   margin-bottom: 30px;
-  background: linear-gradient(to bottom right, #61797d, #34494f);
+  background: linear-gradient(to bottom right, #8fb8c5, #91ad9e) fixed;
+  border-width: 2px;
 }
 
 #albuminfo {
-  background: linear-gradient(to bottom right, #61797d, #34494f);
+  background: linear-gradient(to bottom right, #8fb8c5, #91ad9e) fixed;
   border-style: solid;
   border-color: #f1ec4c;
   display: inline-grid;
@@ -103,6 +87,7 @@ nav {
   grid-gap: 3px;
   font-size: 30px;
   font-family: sans-serif;
+  border-width: 2px;
 }
 
 #rating {
@@ -114,24 +99,24 @@ nav {
 h5 {
   font-size: 40px;
   font-family: sans-serif;
-  color: #f74e3b;
+  color: #b9df8d;
   margin: 20px;
   margin-top: 40px;
 }
 
 #average {
-  color: #D33FE4;
+  color: #b9df8d;
 }
 
 #rate {
   font-size: 30px;
   font-family: sans-serif;
-  color: #f74e3b;
+  color: #b9df8d;
 }
 
 .button {
-  background: #1a2022;
-  color: #f74e3b;
+  background: #678684;
+  color: #e6e272;
   border-width: 0px;
   border-radius: 15px;
   font-size: 20px;
@@ -143,15 +128,15 @@ h5 {
 }
 
 #x {  
-  background: #1a2022;
-  color: #f74e3b;
+  background: #3c4142;
+  color: #b9df8d ;
   border-width: 0px;
   border-radius: 10px;
   font-size: 15px;
 }
 
 .avg {
-  color: #D33FE4;
+  color: #b9df8d;
 }
 
 #user-rating {
@@ -161,7 +146,7 @@ h5 {
 }
 
 #welcome {
-  color: #f74e3b;
+  color: #b9df8d;
   font-family: sans-serif;
   font-size: 80px;
   margin-top: 150px;
@@ -169,7 +154,7 @@ h5 {
 
 #enter {
   text-decoration: none;
-  background: linear-gradient(to bottom right, #61797d, #34494f);
+  background: linear-gradient(to bottom right, #8fb8c5, #91ad9e) fixed;
   color: #f1ec4c;
   font-family: sans-serif;
   border-style: solid;

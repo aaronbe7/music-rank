@@ -1,33 +1,30 @@
-# passport-boilerplate
+# Music Rank
+SEI Project 02
 
+Trello: https://trello.com/b/wXkEgNV0/sei-project-2
+## App Description
+A music rating application. Add albums and contribute ratings.
 
-This is your passport boilerplate.
+## Screenshots
+![Front Page](public/images/Music_Rank_Main.png)
+![Main Page](public/images/Music_Rank_Home.png)
 
-## Setup 
+## Technologies Used
+* CSS
+* HTML
+* JavaScript
+* NodeJS
+* ExpressJS
+* MongoDB
+* MongooseJS ODM
+* OAuth
 
-1. Clone the repo
-2. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
-3. Rename the folder to your Project
+## Next Steps
 
-#### Setup your git repo
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin master` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin master`
+Enhancements that can be made:
+* Search bar functionality to search for albums
+* Ability to filter and order albums 
+* API for music instead of user input
+* Album artwork
 
-#### Setup your login
-
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file
-3. Setup the Code in your config passport 
-4. Setup your call back routes in your `routes/index`
-5. Setup a view and test your login!
-
-#### Make a commit 
-
-```git commit -m "setup up oauth and User Model"```
+This application has the potential to go in many different directions. For example, it can be used as a music sharing and ranking social platform. Users can create and navigate profile pages consisting of  ranked albums and artists. 
