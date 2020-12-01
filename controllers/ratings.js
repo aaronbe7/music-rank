@@ -1,5 +1,3 @@
-const album = require('../models/album');
-const { deleteOne } = require('../models/album');
 const Album = require('../models/album');
 
 module.exports = {

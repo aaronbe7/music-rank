@@ -6,6 +6,4 @@ const guestSchema = new mongoose.Schema({
     googleId: String,
 })
 
-// Create your User Model
-
 module.exports = mongoose.model('Guest', guestSchema);

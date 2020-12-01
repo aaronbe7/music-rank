@@ -29,6 +29,4 @@ const albumSchema = new mongoose.Schema({
     ratings: [ratingSchema],
 })
 
-// Create your User Model
-
 module.exports = mongoose.model('Album', albumSchema);
