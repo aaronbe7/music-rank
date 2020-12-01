@@ -8,6 +8,8 @@ A music rating application. Add albums and contribute ratings.
 ## Screenshots
 ![Front Page](public/images/Music_Rank_Main.png)
 ![Main Page](public/images/Music_Rank_Home.png)
+![New Page](public/images/Music_Rank_New.png)
+![Details Page](public/images/Music_Rank_Details.png)
 
 ## Technologies Used
 * CSS
