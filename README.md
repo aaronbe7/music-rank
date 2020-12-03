@@ -2,6 +2,7 @@
 SEI Project 02
 
 Trello: https://trello.com/b/wXkEgNV0/sei-project-2
+
 App Link: https://music-rank.herokuapp.com/
 ## App Description
 A music rating application. Add albums and contribute ratings.
